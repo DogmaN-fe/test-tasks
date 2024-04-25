@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./reset.css" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="body">
+    <div class="main">
+        <button class="main__button">Написать</button>
+    </div>
+    <div class="darkness hidden">
+      <form class="form" action="#" method="post">
+        <p class="form__title">Стать партнёром проекта</p>
+        <div class="form__group">
+          <div class="form__row">
+            <label class="form__label">
+              <p class="form__label--text">
+                <strong class="form__label--text_red">✱</strong> Название
+                организации
+              </p>
+              <input
+                class="form__label--input"
+                type="text"
+                name="organization"
+                required
+              />
+            </label>
+
+            <label class="form__label">
+              <p class="form__label--text">
+                <strong class="form__label--text_red">✱</strong> Телефон
+              </p>
+              <input
+                class="form__label--input"
+                type="tel"
+                name="phone"
+                required
+              />
+            </label>
+
+            <label class="form__label">
+              <p class="form__label--text">
+                <strong class="form__label--text_red">✱</strong> E-mail
+              </p>
+              <input
+                class="form__label--input"
+                type="email"
+                name="email"
+                required
+              />
+            </label>
+          </div>
+
+          <label class="form__label form__label_without-border">
+            <p class="form__label--logo">
+              <strong class="form__label--text_red">✱</strong> Логотип (jpeg,
+              png)
+            </p>
+            <input
+              id="imageInput"
+              class="form__label--file"
+              type="file"
+              name="logo"
+              accept="image/*"
+              required
+            />
+            <div class="form__label--image">
+              <img
+                class="form__label--image__img"
+                id="selectedImage"
+                src="#"
+                alt=""
+              />
+              <div class="form__label--image__text">
+                <img src="./images/Vector.svg" alt="" width="29" height="29" />
+                Выберите файл
+              </div>
+            </div>
+            <button class="form__label--cancel-button" id="cancelButton">
+              &#10006;
+            </button>
+          </label>
+        </div>
+
+        <div class="form__group">
+          <label class="form__label">
+            <p class="form__label--text">
+              <strong class="form__label--text_red">✱</strong> Направление
+            </p>
+            <select class="form__label--select" name="direction" required>
+              <option value="Экология">Экология</option>
+              <option value="Физика">Физика</option>
+              <option value="Биология">Биология</option>
+            </select>
+          </label>
+
+          <label class="form__label form__label-row">
+            <input class="form__label--input" type="url" name="your-website" />
+            <img src="./images/global.svg" alt="логотип сайта" />
+          </label>
+
+          <label class="form__label form__label-row">
+            <input class="form__label--input" type="url" name="vk" />
+            <img src="./images/vk.svg" alt="логотип ВК" />
+          </label>
+
+          <label class="form__label form__label-row">
+            <input class="form__label--input" type="url" name="ok" />
+            <img
+              src="./images/odnoklassniki 3.svg"
+              alt="логотип одноклассников"
+            />
+          </label>
+          <label class="form__label form__label-row">
+            <input class="form__label--input" type="url" name="facebook" />
+            <img src="./images/facebook.svg" alt="логотип facebook" />
+          </label>
+
+          <label class="form__label form__label-row">
+            <input class="form__label--input" type="url" name="instagram" />
+            <img src="./images/Instagram.svg" alt="логотип instagram" />
+          </label>
+
+          <label class="form__label form__label-row">
+            <input class="form__label--input" type="url" name="youtube" />
+            <img src="./images/youtube.svg" alt="логотип youtube" />
+          </label>
+
+          <label class="form__label">
+            <p class="form__label--text">Руководитель</p>
+            <input
+              class="form__label--input"
+              type="email"
+              name="email"
+              required
+            />
+          </label>
+        </div>
+
+        <input class="form__submit" type="submit" value="Отправить" />
+        <input id="reset" class="form__reset" type="reset" value="Отменить" />
+      </form>
+    </div>
+
+    <script src="./scripts.js"></script>
+  </body>
+</html>
