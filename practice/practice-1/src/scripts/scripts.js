@@ -7,7 +7,6 @@ const buttonOpenForm = document.querySelector(".main__button");
 
 imageInput.addEventListener("change", () => {
   const file = imageInput.files[0];
-  console.log(file);
   if (file) {
     const reader = new FileReader();
     reader.onload = function (e) {

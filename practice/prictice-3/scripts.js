@@ -42,7 +42,9 @@ fetch("https://jsonplaceholder.typicode.com/posts")
       renderTable(posts);
     };
 
-    const posts = data;
+    // Добавил массив постов чтобы при фильтрации не потерять отпавшие посты
+    const postsFromAPI = data;
+    let posts = postsFromAPI;
 
     // удаляем в теле каждого поста присутствует символ переноса строки для корректной работы поисковика
     posts.map((post) => {
@@ -73,12 +75,14 @@ fetch("https://jsonplaceholder.typicode.com/posts")
     search.addEventListener("input", () => {
       const searchTerm = search.value;
       if (String(searchTerm).length >= 3 && searchTerm !== "") {
-        const filteredPosts = posts.filter(
+        posts = posts.filter(
           (post) =>
             post.title.includes(searchTerm) || post.body.includes(searchTerm)
         );
-        renderTable(filteredPosts);
-      } else if (searchTerm === "") {
+        renderTable(posts);
+      } else if (String(searchTerm).length < 3) {
+        // Перезаписываем посты для отображение
+        posts = postsFromAPI;
         renderTable(posts);
       }
     });
