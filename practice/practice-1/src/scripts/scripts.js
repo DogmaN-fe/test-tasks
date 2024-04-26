@@ -10,7 +10,10 @@ imageInput.addEventListener("change", () => {
   if (file) {
     const reader = new FileReader();
     reader.onload = function (e) {
-      selectedImage.src = e.target.result;
+      selectedImage.style.setProperty(
+        "background-image",
+        `url(${e.target.result})`
+      );
     };
     reader.readAsDataURL(file);
   }
@@ -18,7 +21,11 @@ imageInput.addEventListener("change", () => {
 
 cancelButton.addEventListener("click", (event) => {
   event.stopPropagation();
-  selectedImage.src = "";
+
+  selectedImage.style.setProperty(
+    "background-image",
+    "url(src/images/74f68b861331c84638bda7f9f9b5a0d4.png)"
+  );
   imageInput.value = null;
 });
 
