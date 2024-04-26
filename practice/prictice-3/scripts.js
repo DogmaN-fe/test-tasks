@@ -81,9 +81,9 @@ fetch("https://jsonplaceholder.typicode.com/posts")
         );
         renderTable(posts);
       } else if (String(searchTerm).length < 3) {
-        // Перезаписываем посты для отображение
-        posts = postsFromAPI;
         renderTable(posts);
       }
+      // Перезаписываем посты для отображение
+      posts = postsFromAPI;
     });
   });
